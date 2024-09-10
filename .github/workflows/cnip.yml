@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          token: ${{ secrets.PUB_TOKEN }}
+          token: ${{ secrets.ACTION_TOKEN }}
       - name: ros_cn_ip_update
         run: |
           bash -x script/update.sh
