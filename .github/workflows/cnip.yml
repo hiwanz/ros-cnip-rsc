@@ -9,9 +9,9 @@ jobs:
   ROS-IP-UPDATE:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
-          token: ${{ secrets.ACTION_TOKEN }}
+          token: ${{ secrets.PUB_TOKEN }}
       - name: ros_cn_ip_update
         run: |
           bash -x script/update.sh
