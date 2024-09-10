@@ -1,0 +1,21 @@
+name: UPDATE ROS CNIP
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: 0 0 1 * *
+
+jobs:
+  ROS-IP-UPDATE:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.ACTION_TOKEN }}
+      - name: ros_cn_ip_update
+        run: |
+          bash -x script/update.sh
+      - name: push_to_repo
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Update cnip.rsc
