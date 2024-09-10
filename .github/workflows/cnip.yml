@@ -9,7 +9,7 @@ jobs:
   ROS-IP-UPDATE:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v3
         with:
           token: ${{ secrets.ACTION_TOKEN }}
       - name: ros_cn_ip_update
